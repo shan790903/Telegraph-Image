@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 var altText = url.split('/').pop(); // 获取图片链接的最后一部分作为 Alt Text
                 var markdownImage = `![${altText}](${url})`;
-                console.log('生成的 Markdown 格式的图片链接：', markdownImage);
+                console.log('產生的 Markdown 格式的圖片連結：', markdownImage);
 
                 // 检查并删除已有的 Markdown 输入框和按钮
                 var existingMarkdownDiv = document.querySelector('.markdown-container');
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // 创建复制文本按钮元素
                 var copyButton = document.createElement('span');
-                copyButton.textContent = '复制Markdown';
+                copyButton.textContent = '複製Markdown';
                 copyButton.style.padding = '5px 10px'; // 设置样式
                 copyButton.style.backgroundColor = '#007bff';
                 copyButton.style.color = 'white';
@@ -58,13 +58,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     // 复制文本按钮的点击事件处理函数
                     markdownInput.select();
                     document.execCommand('copy');
-                    copyButton.textContent = '已复制';
+                    copyButton.textContent = '已複製';
                     copyButton.style.pointerEvents = 'none'; // 禁用按钮点击
-                    console.log('已复制文本:', markdownInput.value);
+                    console.log('已複製文字:', markdownInput.value);
                     
                     // 2秒后将按钮文本恢复为“复制Markdown”
                     setTimeout(function() {
-                        copyButton.textContent = '复制Markdown';
+                        copyButton.textContent = '複製Markdown';
                         copyButton.style.pointerEvents = 'auto'; // 允许按钮再次点击
                     }, 2000);
                 });
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     var urlBox = urlBoxElements[0];
                     urlBox.parentNode.insertBefore(newDiv, urlBox);
                 } else {
-                    console.error('未找到类名为 url-box 且 data-v-793b8fc8 属性为空的元素！');
+                    console.error('找不到類別名稱為 url-box 且 data-v-793b8fc8 屬性為空的元素！');
                 }
             }
 
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // 设置2分钟后关闭定时器
             timer = setTimeout(function() {
                 clearInterval(waitForElement); // 停止等待输入框元素的检查
-                console.log('定时器已关闭');
+                console.log('定時器已關閉');
             }, 2 * 60 * 1000); // 2分钟，单位是毫秒
         }
     }, 1000); // 每1000毫秒检查一次是否生成了输入框元素
